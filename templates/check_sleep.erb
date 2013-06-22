@@ -1,0 +1,26 @@
+#!/bin/sh
+
+#vars
+
+#check for active connections on this ports, list space separated
+PORTS=""
+#run following command if no sessions found
+COMMAND=""
+
+can_shutdown=1
+
+#check the port list
+for port in $PORTS; do
+	netstat -an | grep ESTABLISHED | awk '{print $4}' | grep -q "\:$port\$"
+
+	if [[ $? -eq 0 ]]; then
+		can_shutdown=0
+		break
+	fi
+	
+done
+
+#shutdown if allowed
+if [[ $can_shutdown -eq 1 ]]; then
+	$COMMAND
+fi
