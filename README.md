@@ -1,4 +1,6 @@
-# Class: sleep
+# Puppet-sleep
+
+[![Build Status](https://travis-ci.org/artem-sidorenko/puppet-sleep.png?branch=master)](https://travis-ci.org/artem-sidorenko/puppet-sleep)
 
 This package allows to suspend or shutdown the system if you don't have
 specified running network connections. I've created this script for my system
