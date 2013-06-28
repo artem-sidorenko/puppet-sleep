@@ -1,42 +1,42 @@
-== Class: sleep
+# Class: sleep
 
 This package allows to suspend or shutdown the system if you don't have
 specified running network connections. I've created this script for my system
 running as NAS at home to save power consumption. Wakeup of the systems
 happens usually via WakeOnLan, see the examples in the README.
 
-=== Parameters
+## Parameters
 This module is used just as a class with following parameters:
 
-[*period*]
-  time period to check in minutes, is used for the cron job
+**period**
+time period to check in minutes, is used for the cron job
 
-[*ports*]
-  hash with UDP/TCP ports to check for active established sessions, netstat is used to retrieve the information
+**ports**
+hash with UDP/TCP ports to check for active established sessions, netstat is used to retrieve the information
 
-[*suspend_command*]
-  command to run if no active sessions present
+**suspend_command**
+command to run if no active sessions present
 
-=== Examples
+## Examples
 
-==== Puppet module
+### Puppet module
 
- class { sleep:
-   period => 15,
-   ports  => ['80','443'],
-   suspend_command => 'systemctl suspend',
- }
+    class { sleep:
+      period => 15,
+      ports  => ['80','443'],
+      suspend_command => 'systemctl suspend',
+    }
 
-==== WakeOnLan configuration on MikroTik router
+### WakeOnLan configuration on MikroTik router
 
-==== WakeOnLan configuration with iptables
+### WakeOnLan configuration with iptables
 
 
-=== Authors
+## Authors
 
 Artem Sidorenko <artem@2realities.com>
 
-=== Copyright
+## Copyright
 
  Copyright [2013] [Artem Sidorenko]
 
