@@ -1,1 +1,1 @@
-task :default => [:lint]
+#task :default => [:lint]
