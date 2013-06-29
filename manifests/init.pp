@@ -60,7 +60,7 @@ class sleep(
     Archlinux: {
       $supported = true
       $script_location = '/usr/local/libexec'
-      $packages_requiered = 'UNSET'
+      $packages_requiered = 'net-tools'
       if ($suspend_command == 'UNSET') {
         $suspend_command = 'systemctl suspend'
       }
@@ -73,7 +73,7 @@ class sleep(
     }
 
   if ( $packages_requiered != 'UNSET' ) {
-    package { 'puppet-sleep':
+    package { "${module_name}-package":
       ensure => present,
       name   => $packages_requiered,
     }
