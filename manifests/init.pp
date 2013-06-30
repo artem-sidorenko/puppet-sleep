@@ -92,7 +92,7 @@ class sleep(
   cron { "${module_name}-cron":
     command => "${script_location}/${script_name}",
     user    => root,
-    minute  => $period,
+    minute  => "*/$period",
     require => File["${module_name}-script"],
   }
 
