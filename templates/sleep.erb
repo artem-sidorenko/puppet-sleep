@@ -5,7 +5,7 @@
 #check for active connections on this ports, list space separated
 PORTS="<% @ports.each do |port| %><%= port %> <% end %>"
 #run following command if no sessions found
-COMMAND="<%= suspend_command %>"
+COMMAND="<%= suspend_command_real %>"
 
 can_shutdown=1
 

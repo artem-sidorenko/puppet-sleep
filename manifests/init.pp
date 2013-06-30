@@ -61,9 +61,7 @@ class sleep(
       $supported = true
       $script_location = '/usr/local/libexec'
       $packages_requiered = 'net-tools'
-      if ($suspend_command == 'UNSET') {
-        $suspend_command = 'systemctl suspend'
-      }
+      $suspend_command_os = 'systemctl suspend'
     }
 
     default: {
@@ -71,6 +69,13 @@ class sleep(
     }
 
   }
+
+  if ($suspend_command == 'UNSET') {
+    $suspend_command_real = $suspend_command_os
+  } else {
+    $suspend_command_real = $suspend_command
+  }
+
 
   if ( $packages_requiered != 'UNSET' ) {
     package { "${module_name}-package":
