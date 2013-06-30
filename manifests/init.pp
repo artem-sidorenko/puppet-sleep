@@ -86,7 +86,7 @@ class sleep(
 
   file { "${module_name}-script":
     path    => "${script_location}/${script_name}",
-    content => template("modules/${module_name}/sleep.erb"),
+    content => template("${module_name}/sleep.erb"),
     mode    => '0755',
   }
   cron { "${module_name}-cron":
