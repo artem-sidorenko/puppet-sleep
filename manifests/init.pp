@@ -59,7 +59,7 @@ class sleep(
   case $::osfamily {
     Archlinux: {
       $supported = true
-      $script_location = '/usr/local/libexec'
+      $script_location = '/usr/local/lib'
       $packages_requiered = 'net-tools'
       $suspend_command_os = 'systemctl suspend'
     }
