@@ -50,6 +50,7 @@ Example firewall rules:
     add action=drop chain=forward
 
 Example WakeOnLan script:
+
     /system scheduler
     add interval=2s name=check-wol on-event=":local packet [/ip firewall filter get [find comment=\"PINGWOL\"] packets]\
     \n\
