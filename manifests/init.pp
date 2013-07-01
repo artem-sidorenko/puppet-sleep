@@ -48,7 +48,7 @@
 #
 class sleep(
   $period=15,
-  $ports='22,80,443',
+  $ports=['22','80','443'],
   $suspend_command='UNSET'
   ) {
 
